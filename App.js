@@ -12,7 +12,8 @@ import {
   ImageBackground,
 } from "react-native";
 import SecondScreen from "./components/SecondScreen";
-import WelcomeScreen from "./components/WelcomeScreen";
+
+
 
 {/* <WelcomeScren/> */}
 export default function App() {

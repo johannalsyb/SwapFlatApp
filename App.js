@@ -1,25 +1,15 @@
-import React from "react";
+import React  from "react";
+import { StyleSheet, SafeAreaView } from "react-native";
+import Card from "./components/Card";
+import ViewImageScreen from "./screens/ViewImageScreen";
 
-import {
-  StyleSheet,
-  Text,
-  SafeAreaView,
-  Image,
-  TouchableHighlight,
-  Button,
-  Alert,
-  View,
-  ImageBackground,
-} from "react-native";
-import SecondScreen from "./components/SecondScreen";
+import WelcomeScreen from "./screens/WelcomeScreen";
 
-
-
-{/* <WelcomeScren/> */}
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-     <SecondScreen/>
+    <ViewImageScreen></ViewImageScreen>
+    
     </SafeAreaView>
   );
 }
@@ -28,5 +18,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
+    padding: 10,
   },
 });

@@ -1,15 +1,15 @@
-import React, { Children } from "react";
-import { Pressable, StyleSheet, Text, SafeAreaView, View } from "react-native";
+import React from "react";
+import { StyleSheet, Text, Touchable, TouchableOpacity } from "react-native";
 
 import colors from "../config/colors";
 
-function MyButton(props) {
+function MyButton(props, onPress) {
   const { onPress, title = "Save" } = props;
   return (
     
-      <Pressable style={[styles.ButtonStyle,{backgroundColor:props.color}]} onPress={onPress}>
+      <TouchableOpacity style={[styles.ButtonStyle,{backgroundColor:props.color}]} onPress={onPress}>
         <Text style={styles.ButtonText}>{props.children}</Text>
-      </Pressable>
+      </TouchableOpacity>
     
   );
 }

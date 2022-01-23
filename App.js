@@ -11,12 +11,13 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
     {/* <ViewImageScreen></ViewImageScreen> */}
-    {/* <Card
+    <Card
     image={require("./assets/elephant.jpg")}
     title="My title"
     description="My description"
-    ></Card> */}
-    <MyButton color={colors.primary}>LOGIN</MyButton>
+    ></Card>
+ 
+   
 
     </SafeAreaView> 
   );

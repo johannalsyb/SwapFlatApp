@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import MyButton from "./components/MyButton";
 import colors from "./config/colors";
 import ListingDetailsScreen from "./screens/ListingDetailsScreen";
+import MessageScreen from "./screens/MessageScreen";
 import ViewImageScreen from "./screens/ViewImageScreen";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -11,7 +12,7 @@ import WelcomeScreen from "./screens/WelcomeScreen";
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-     <ListingDetailsScreen></ListingDetailsScreen>
+ <MessageScreen></MessageScreen>
     </SafeAreaView> 
   );
 }

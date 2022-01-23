@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
   backgroudView: {
     backgroundColor: "white",
     width: "100%",
+    maxWidth: 500,
     height: 400,
     borderRadius: 10,
     shadowColor: "grey",

@@ -19,14 +19,6 @@ function Card(props) {
         <Text style={styles.titleStyle}>{props.title}</Text>
         <Text style={styles.descriptionStyle}>{props.description}</Text>
       </View>
-
-      <View style={styles.cardSecond}>
-      
-          <View stule={styles.vertical}>
-            <Text> Johann Alerte</Text>
-            <Text> 5 Listing</Text>
-        </View>
-      </View>
     </SafeAreaView>
   );
 }
@@ -41,7 +33,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 10, height: 10 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
-
   },
   titleStyle: {
     fontSize: 25,
@@ -58,19 +49,17 @@ const styles = StyleSheet.create({
     color: colors.secondary,
     fontWeight: "bold",
   },
-  cardSecond: {
+  horizontal: {
     flexDirection: "row",
     backgroundColor: "pink",
     height: 100,
     width: 100,
     borderRadius: 50,
-  
-    
   },
   vertical: {
     flexDirection: "column",
-    
+    position: "absolute",
+    right: 20,
   },
-  
 });
 export default Card;

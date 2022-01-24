@@ -36,6 +36,7 @@ function MessageScreen() {
                         subTitle={item.subTitle}
                         image={item.image}
                         onPress={()=> console.log(item.description)}
+                        renderRightActions={() => <View style={{backgroundColor: "red", height: 50, width:70}} />}
                     />
                 )}
                 ItemSeparatorComponent={ItemSeparator}

@@ -4,13 +4,14 @@ import {
   StyleSheet,
   Image,
   Text,
-  TouchableOpacity,
   TouchableHighlight,
+  renderRightActions,
+  
 } from "react-native";
-import { Swipeable } from "react-native-gesture-handler";
-import ListItems from "./ListItems";
 
-function ListItems({ image, title, subTitle, onPress }) {
+import Swipeable from "react-native-gesture-handler/Swipeable";
+
+function ListItems({ image, title, subTitle, onPress, renderRightActions }) {
   return (
     <Swipeable renderRightActions={renderRightActions}>
       <TouchableHighlight underlayColor="grey" onPress={onPress}>

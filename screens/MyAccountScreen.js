@@ -3,7 +3,7 @@ import ListItems from "../components/ListItems";
 import colors from "../config/colors";
 import { View, StyleSheet, ImageBackground } from "react-native";
 import ListItemsIcons from "../components/ListItemsIcons";
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import ItemSeparator from "../components/ItemSeparator";
 
 function MyAccountScreen(props) {
   return (
@@ -15,11 +15,28 @@ function MyAccountScreen(props) {
           image={require("../assets/johann.jpg")}
         />
       </View>
-   <ListItemsIcons style={styles.icoins}
-       title= "My Listing"
-       icon= "list-outline"
-       size= {40}  
-   />
+      <ListItemsIcons
+        color={colors.primary}
+        style={styles.icoins}
+        title="My Listing"
+        icon="list-outline"
+        size={40}
+      />
+      <ItemSeparator />
+      <ListItemsIcons
+        color={colors.secondary}
+        title="My Messages"
+        icon="caret-up-outline"
+        size={40}
+      />
+      <View style={{marginTop: 50}}>
+      <ListItemsIcons
+        color={colors.pink}
+        title="LOGOUT"
+        icon="log-out"
+        size={40}
+      />
+      </View>
     </ImageBackground>
   );
 }
@@ -30,9 +47,6 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginVertical: 20,
   },
-  icoins: {
-   backgroundColor: "blue",
-  }
 });
 
 export default MyAccountScreen;

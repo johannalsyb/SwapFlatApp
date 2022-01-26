@@ -6,7 +6,14 @@ import colors from "../config/colors";
 function ListItemsIcons(props) {
   return (
     <View style={styles.container}>
-      <Ionicons style={styles.icons} name={props.icon} size={props.size} />
+    <View style={[styles.icons,{ height: 50, width: 50, borderRadius:25, backgroundColor: props.color}]}>
+      <Ionicons
+        style={styles.icons}
+        name={props.icon}
+        size={props.size}
+      />
+    </View>
+
       <View style={styles.vertical}>
         <Text style={styles.title}>{props.title}</Text>
       </View>
@@ -18,24 +25,22 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     padding: 10,
-    backgroundColor: "red",
+    backgroundColor: "white",
   },
   icons: {
-    color: "black",
-    backgroundColor: colors.primary,
-    borderRadius: 50,
-
+    color: "white",
+    justifyContent: "center",
+    alignItems: "center",
   },
   title: {
     fontSize: 15,
     color: "black",
     alignContent: "center",
-    alignItems: "center",
+    fontWeight: "bold",
   },
-
   vertical: {
-    marginTop: 10,
-    marginLeft: 10,
+    justifyContent: "center",
+    marginHorizontal: 10,
   },
 });
 

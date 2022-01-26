@@ -6,18 +6,20 @@ import colors from "../config/colors";
 function Card(props) {
   return (
     <SafeAreaView>
-      <View style={styles.backgroudView}>
+      <View>
         <Image
           style={{
-            height: 300,
+            height: 150,
             width: "100%",
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
+            borderTopLeftRadius: 20,
+            borderTopRightRadius: 20,
           }}
           source={props.image}
         />
-        <Text style={styles.titleStyle}>{props.title}</Text>
-        <Text style={styles.descriptionStyle}>{props.description}</Text>
+        <View style={styles.backgroudView}>
+          <Text style={styles.titleStyle}>{props.title}</Text>
+          <Text style={styles.descriptionStyle}>{props.description}</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -27,13 +29,15 @@ const styles = StyleSheet.create({
   backgroudView: {
     backgroundColor: "white",
     width: "100%",
-    maxWidth: 500,
-    height: 400,
-    borderRadius: 10,
+    height: 100,
+    borderBottomEndRadius: 20,
+    borderBottomLeftRadius: 20,
+    
     shadowColor: "grey",
     shadowOffset: { width: 10, height: 10 },
     shadowOpacity: 0.2,
     shadowRadius: 10,
+    marginBottom: 20,
   },
   titleStyle: {
     fontSize: 25,

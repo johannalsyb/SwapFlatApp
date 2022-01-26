@@ -10,11 +10,12 @@ import "react-native-gesture-handler";
 
 import WelcomeScreen from "./screens/WelcomeScreen";
 import MyAccountScreen from "./screens/MyAccountScreen";
+import ListingScreen from "./screens/ListingScreen";
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-     <MyAccountScreen></MyAccountScreen>
+    <ListingScreen></ListingScreen>
     </SafeAreaView>
   );
 }

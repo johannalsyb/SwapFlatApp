@@ -1,5 +1,5 @@
-import React from "react";
-import { StyleSheet, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import { StyleSheet, SafeAreaView, TextInput } from "react-native";
 import Card from "./components/Card";
 import MyButton from "./components/MyButton";
 import colors from "./config/colors";
@@ -12,10 +12,18 @@ import WelcomeScreen from "./screens/WelcomeScreen";
 import MyAccountScreen from "./screens/MyAccountScreen";
 import ListingScreen from "./screens/ListingScreen";
 
+
+
 export default function App() {
+  const [firstName, setFirstName] = useState("")
+
   return (
     <SafeAreaView style={styles.container}>
-    <ListingScreen></ListingScreen>
+    <TextInput placeholder="email" style={{
+      borderColor: "grey", 
+      borderWidth: 1,
+
+    }}/>
     </SafeAreaView>
   );
 }

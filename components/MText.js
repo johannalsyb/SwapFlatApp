@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import { Text, StyleSheet } from "react-native";
 
 function MText({ children }) {
-  return (<Text style={styles.text}>{children}</Text>
+  return (<Text style={[style.text, styles.text]}>{children}</Text>
     );
 }
 const styles = StyleSheet.create({

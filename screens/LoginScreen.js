@@ -3,13 +3,10 @@ import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import MyButton from "../components/MyButton";
 import colors from "../config/colors";
-import { useState } from "react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
 function LoginScreen(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
@@ -29,7 +26,7 @@ function LoginScreen(props) {
                 icon="email"
                 placeholder="Email"
                 keyboardType="email-address"
-                onChangeText={(text) => setEmail(text)}
+                onChangeText={handleChange("email")}
                 autoCapitalize="none"
               />
               <AppTextInput
@@ -37,12 +34,12 @@ function LoginScreen(props) {
                 placeholder="password"
                 keyboardType="default"
                 autoCapitalize="none"
-                onChangeText={(text) => setPassword(text)}
+                onChangeText={handleChange("password")}
                 secureTextEntry
               />
               <MyButton
                 color="black"
-                onPress={() => console.log(email, password)}
+                onPress={handleSubmit}
               >
                 LOGIN
               </MyButton>

@@ -13,7 +13,7 @@ function MyButton({children,color,onPress}) {
  
 const styles = StyleSheet.create({
   ButtonStyle: {
-    marginBottom: 10,
+    marginHorizontal: 15,
     justifyContent: "center",
     alignSelf: "center",
     paddingVertical: 10,

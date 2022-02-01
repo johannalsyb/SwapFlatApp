@@ -1,15 +1,19 @@
 import React from 'react';
-import { Image, ImageBackground, StyleSheet } from 'react-native';
+import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 import AppTextInput from '../components/AppTextInput';
 import MyButton from '../components/MyButton';
 import colors from '../config/colors';
-
+import { useState } from "react";
+import { formik } from "formik";
 
 function LoginScreen(props) {
-    const [state, setState] = useState("")
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     return (
-        <ImageBackground style={styles.background}>
+        <View style={styles.container}>
+
+            <ImageBackground style={styles.background}>
         <Image 
         style={{width: 60, height: 60, alignSelf: "center", margin: 40}}
         source={require("../assets/logo.png")}/>
@@ -17,7 +21,7 @@ function LoginScreen(props) {
            icon="email" 
            placeholder= "Email"
            keyboardType= "email-address"
-           onChangetext={text => setState(text)}
+           onChangeText={text => setEmail(text)}
            autoCapitalize= "none"
            />
             <AppTextInput 
@@ -25,10 +29,15 @@ function LoginScreen(props) {
            placeholder= "password"
            keyboardType= "default"
            autoCapitalize= "none"
+           onChangeText={text => setPassword(text)}
            secureTextEntry
            />
-  <MyButton color= "black">LOGIN</MyButton>
+  <MyButton color= "black" onPress={() => console.log(email,password)}>LOGIN</MyButton>
+
+
         </ImageBackground>
+        </View>
+        
     );
 }
 
@@ -37,6 +46,9 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         width: "100%", 
         height: "100%",
+    }, 
+    container: {
+        margin: 10,
     }
 })
 

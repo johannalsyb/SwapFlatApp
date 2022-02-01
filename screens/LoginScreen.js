@@ -4,15 +4,18 @@ import AppTextInput from '../components/AppTextInput';
 import MyButton from '../components/MyButton';
 import colors from '../config/colors';
 import { useState } from "react";
-import { formik } from "formik";
+import { Formik, formik } from "formik";
 
 function LoginScreen(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     return (
-        <View style={styles.container}>
 
+    
+
+        <View style={styles.container}>
+  <Formik></Formik>
             <ImageBackground style={styles.background}>
         <Image 
         style={{width: 60, height: 60, alignSelf: "center", margin: 40}}

@@ -9,7 +9,7 @@ import { Formik } from "formik";
 function LoginScreen(props) {
   const [mail, setEmail] = useState();
   const [password, setPassword] = useState();
- 
+
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.background}>
@@ -18,37 +18,38 @@ function LoginScreen(props) {
           source={require("../assets/logo.png")}
         />
 
-
         <Formik
-        initialValues={{email: "",password: "" }}
-        onSubmit={value => {
-          
-        }}
+          initialValues={{ email: "", password: "" }}
+          onSubmit={(values) => console.log(value)}
         >
-
+          {({ handleChange, handleSubmit }) => (
+            <>
+              <AppTextInput
+                icon="email"
+                placeholder="Email"
+                keyboardType="email-address"
+                onChangeText={(text) => setEmail(text)}
+                autoCapitalize="none"
+              />
+              <AppTextInput
+                react-native
+                info
+                icon="key"
+                placeholder="password"
+                keyboardType="default"
+                autoCapitalize="none"
+                onChangeText={(text) => setPassword(text)}
+                secureTextEntry
+              />
+              <MyButton
+                color="black"
+                onPress={() => console.log(mail, password)}
+              >
+                LOGIN
+              </MyButton>
+            </>
+          )}
         </Formik>
-
-        <AppTextInput
-          icon="email"
-          placeholder="Email"
-          keyboardType="email-address"
-          onChangeText={(text) => setEmail(text) }
-          autoCapitalize="none"
-        />
-        <AppTextInput react-native info
-          icon="key"
-          placeholder="password"
-          keyboardType="default"
-          autoCapitalize="none"
-          onChangeText={(text)=> setPassword(text)}
-          secureTextEntry
-        />
-        <MyButton color="black" onPress={()=> console.log(mail, password)}>
-          LOGIN
-        </MyButton>
-
-
-
       </ImageBackground>
     </View>
   );

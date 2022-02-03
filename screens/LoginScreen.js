@@ -2,12 +2,14 @@ import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import MyButton from "../components/MyButton";
-import colors from "../config/colors";
+
+import { useState } from "react";
 import { Formik } from "formik";
-import * as Yup from "yup";
 
 function LoginScreen(props) {
-
+  const [mail, setEmail] = useState();
+  const [password, setPassword] = useState();
+ 
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.background}>
@@ -16,36 +18,37 @@ function LoginScreen(props) {
           source={require("../assets/logo.png")}
         />
 
+
         <Formik
-          initialValues={{ email: "", password: "" }}
-          onSubmit={(values) => console.log(values)}
+        initialValues={{email: "",password: "" }}
+        onSubmit={value => {
+          
+        }}
         >
-          {({ handleChange, handleSubmit }) => (
-            <>
-              <AppTextInput
-                icon="email"
-                placeholder="Email"
-                keyboardType="email-address"
-                onChangeText={handleChange("email")}
-                autoCapitalize="none"
-              />
-              <AppTextInput
-                icon="key"
-                placeholder="password"
-                keyboardType="default"
-                autoCapitalize="none"
-                onChangeText={handleChange("password")}
-                secureTextEntry
-              />
-              <MyButton
-                color="black"
-                onPress={handleSubmit}
-              >
-                LOGIN
-              </MyButton>
-            </>
-          )}
+
         </Formik>
+
+        <AppTextInput
+          icon="email"
+          placeholder="Email"
+          keyboardType="email-address"
+          onChangeText={(text) => setEmail(text) }
+          autoCapitalize="none"
+        />
+        <AppTextInput react-native info
+          icon="key"
+          placeholder="password"
+          keyboardType="default"
+          autoCapitalize="none"
+          onChangeText={(text)=> setPassword(text)}
+          secureTextEntry
+        />
+        <MyButton color="black" onPress={()=> console.log(mail, password)}>
+          LOGIN
+        </MyButton>
+
+
+
       </ImageBackground>
     </View>
   );

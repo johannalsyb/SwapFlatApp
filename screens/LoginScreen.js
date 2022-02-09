@@ -1,20 +1,27 @@
 import React from "react";
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  TouchableNativeFeedback,
+  View,
+} from "react-native";
 import AppTextInput from "../components/AppTextInput";
 import MyButton from "../components/MyButton";
 import { Formik } from "formik";
 import MText from "../components/MText";
-import * as Yup from 'yup';
+import * as Yup from "yup";
+import ErrorMessage from "../components/ErrorMessage";
+import AppFormField from "../components/AppFormField";
+import SubmitButton from "../components/SubmitButton";
 
-const dataValidation = Yup.object().shape(
-  {
-    email : Yup.string().required().email().label('Email'),
-    password: Yup.string().required().min(4).label("Password"),
-  });
-
+const dataValidation = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(4).label("Password"),
+});
 
 function LoginScreen(props) {
-  
   return (
     <View style={styles.container}>
       <ImageBackground style={styles.background}>
@@ -28,33 +35,37 @@ function LoginScreen(props) {
           onSubmit={(values) => console.log(values)}
           validationSchema={dataValidation}
         >
-          {({ handleChange, handleSubmit, errors }) => (
+          {({
+            handleChange,
+            handleSubmit,
+            errors,
+            setFieldTouched,
+            touched,
+          }) => (
             <>
-              <AppTextInput
+              <AppFormField
                 icon="email"
+                fieldName="email"
                 placeholder="Email"
                 keyboardType="email-address"
-                onChangeText={handleChange("email")}
                 autoCapitalize="none"
               />
-              <MText color="red">{errors.email}</MText>
-              <AppTextInput
-                react-native
-                info
+              <AppFormField
+                fieldName="password"
                 icon="key"
                 placeholder="password"
                 keyboardType="default"
                 autoCapitalize="none"
-                onChangeText={handleChange("password")}
                 secureTextEntry
               />
-              <MText color="red">{errors.password}</MText>
-              <MyButton
+
+              <SubmitButton
+                title="LOGIN"
                 color="black"
-                onPress={handleSubmit}
+                style={styles.button}
               >
-                LOGIN
-              </MyButton>
+               
+              </SubmitButton>
             </>
           )}
         </Formik>
@@ -71,6 +82,10 @@ const styles = StyleSheet.create({
   },
   container: {
     margin: 10,
+  },
+  button: {
+    marginVertical: 16,
+  
   },
 });
 

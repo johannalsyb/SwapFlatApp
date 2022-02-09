@@ -5,7 +5,7 @@ import colors from "../config/colors";
 
 function MyButton({children,color,onPress}) {
   return (
-    <TouchableOpacity onPress={onPress}  style={[styles.ButtonStyle, { backgroundColor: color }]}>
+    <TouchableOpacity onPress={onPress}  style={[styles.ButtonStyle, { backgroundColor: color } ]}>
       <Text style={styles.ButtonText}>{children}</Text>
     </TouchableOpacity>
   );
@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     justifyContent: "center",
     alignSelf: "center",
-    paddingVertical: 10,
+    paddingVertical: 15,
     width: "100%",
     maxWidth: 400,
     borderRadius: 20,
     elevation: 3,
-    backgroundColor: colors.primary,
+
     alignItems: "center",
   },
   ButtonText: {

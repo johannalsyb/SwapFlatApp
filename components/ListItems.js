@@ -5,7 +5,6 @@ import {
   Image,
   Text,
   TouchableHighlight,
-  renderRightActions,
   
 } from "react-native";
 

@@ -1,7 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, Touchable, TouchableOpacity, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-import colors from "../config/colors";
 
 function MyButton({children,color,onPress}) {
   return (

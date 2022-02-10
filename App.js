@@ -24,6 +24,8 @@ import AppTextInput from "./components/AppTextInput";
 import AppPicker from "./components/AppPicker";
 import DropDown from "./components/DropDown";
 import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import AppFormPicker from "./components/forms/AppFormPicker";
 
 export default function App() {
   const [firstName, setFirstName] = useState("");
@@ -31,7 +33,7 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-     <LoginScreen></LoginScreen>
+     <AppFormPicker></AppFormPicker>
     </SafeAreaView>
   );
 }

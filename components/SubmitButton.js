@@ -1,5 +1,5 @@
 import React from 'react';
-import MyButton from './MyButton';
+import MyButton from '../components/MyButton';
 import { useFormikContext } from "formik";
 import style from '../config/style';
 

@@ -4,6 +4,7 @@ import { FlatList } from "react-native-gesture-handler";
 import Card from "../components/Card";
 import colors from "../config/colors";
 
+
 const cardList = [
   {
     id: 1,

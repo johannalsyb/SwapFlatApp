@@ -1,7 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import colors from "../config/colors";
 
 function ListItemsIcons(props) {
   return (

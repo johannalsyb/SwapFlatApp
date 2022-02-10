@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textTransform: "capitalize",
     flex: 1,
-   
+  
   },
 });
 

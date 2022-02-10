@@ -3,18 +3,12 @@ import {
   Image,
   ImageBackground,
   StyleSheet,
-  Text,
-  TouchableNativeFeedback,
   View,
 } from "react-native";
-import AppTextInput from "../components/AppTextInput";
-import MyButton from "../components/MyButton";
-import { Formik } from "formik";
-import MText from "../components/MText";
 import * as Yup from "yup";
-import ErrorMessage from "../components/ErrorMessage";
-import AppFormField from "../components/AppFormField";
+import AppFormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/SubmitButton";
+import AppForm from "../components/forms/AppForm";
 
 const dataValidation = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -30,20 +24,12 @@ function LoginScreen(props) {
           source={require("../assets/logo.png")}
         />
 
-        <Formik
+        <AppForm
           initialValues={{ email: "", password: "" }}
           onSubmit={(values) => console.log(values)}
           validationSchema={dataValidation}
         >
-          {({
-            handleChange,
-            handleSubmit,
-            errors,
-            setFieldTouched,
-            touched,
-          }) => (
-            <>
-              <AppFormField
+          <AppFormField
                 icon="email"
                 fieldName="email"
                 placeholder="Email"
@@ -66,9 +52,7 @@ function LoginScreen(props) {
               >
                
               </SubmitButton>
-            </>
-          )}
-        </Formik>
+        </AppForm>
       </ImageBackground>
     </View>
   );
